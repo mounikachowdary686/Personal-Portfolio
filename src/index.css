@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --color-void: #060814;
+    --color-abyss: #0b0f1f;
+    --color-glass: rgba(11, 15, 31, 0.70);
+    --color-cyan: #00f5ff;
+    --color-violet: #8b5cf6;
+    --color-sky: #38bdf8;
+    --color-purple: #a855f7;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #060814;
+    color: #e1e1f3;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060814;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.35);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 245, 255, 0.5);
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.8deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 245, 255, 0.25), 0 0 50px rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 245, 255, 0.45), 0 0 70px rgba(168, 85, 247, 0.35);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverseSlow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 25s linear infinite;
+}
+
+/* Glassmorphism level 2 per Stitch design */
+.glass-panel {
+  background: rgba(11, 15, 31, 0.70);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(0, 245, 255, 0.45);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.2), 0 16px 40px -8px rgba(0, 0, 0, 0.8);
+}
+
+/* Dual gradient border wrapper */
+.gradient-border-card {
+  position: relative;
+  background: rgba(11, 15, 31, 0.75);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+}
+
+.gradient-border-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(1rem + 1px);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, rgba(0, 245, 255, 0.35) 50%, rgba(168, 85, 247, 0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-card:hover::before {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.9) 0%, rgba(139, 92, 246, 0.7) 60%, rgba(0, 245, 255, 0.4) 100%);
+}
+
+/* Subtle cyber background grid */
+.cyber-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

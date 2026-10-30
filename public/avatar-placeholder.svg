@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f1f" />
+      <stop offset="50%" stop-color="#12172f" />
+      <stop offset="100%" stop-color="#060814" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5ff" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <radialGradient id="neonRadial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f5ff" stop-opacity="0.3" />
+      <stop offset="70%" stop-color="#8b5cf6" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)" />
+  <circle cx="200" cy="200" r="180" fill="url(#neonRadial)" />
+
+  <!-- Outer Cyber Rings -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#00f5ff" stroke-width="2" stroke-opacity="0.4" stroke-dasharray="16 8 4 8" />
+  <circle cx="200" cy="200" r="160" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="30 12" />
+
+  <!-- Silhouette & Tech Geometry -->
+  <g fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.6">
+    <path d="M100 340 C100 280, 140 250, 200 250 C260 250, 300 280, 300 340" fill="#0b0f1f" stroke="#00f5ff" stroke-width="2.5" />
+    <circle cx="200" cy="170" r="65" fill="#101426" stroke="url(#glowGrad)" stroke-width="3" />
+  </g>
+
+  <!-- Monogram Initials "MK" in futuristic typography -->
+  <text x="200" y="185" font-family="'JetBrains Mono', 'Plus Jakarta Sans', monospace, sans-serif" font-size="44" font-weight="800" fill="#00f5ff" text-anchor="middle" letter-spacing="4" filter="drop-shadow(0 0 10px rgba(0,245,255,0.7))">MK</text>
+
+  <!-- Code brackets & AI signals -->
+  <text x="200" y="305" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#a855f7" text-anchor="middle" letter-spacing="2">&lt; AI / ML DEVELOPER &gt;</text>
+  
+  <!-- Circuit Nodes -->
+  <circle cx="135" cy="170" r="4" fill="#00f5ff" />
+  <circle cx="265" cy="170" r="4" fill="#00f5ff" />
+  <line x1="120" y1="170" x2="135" y2="170" stroke="#00f5ff" stroke-width="1.5" />
+  <line x1="265" y1="170" x2="280" y2="170" stroke="#00f5ff" stroke-width="1.5" />
+  <circle cx="200" cy="100" r="4" fill="#8b5cf6" />
+  <line x1="200" y1="85" x2="200" y2="100" stroke="#8b5cf6" stroke-width="1.5" />
+</svg>
